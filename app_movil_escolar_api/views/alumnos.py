@@ -74,7 +74,7 @@ class AlumnosView(generics.CreateAPIView):
 
             #Create a profile for the user
             alumno = Alumnos.objects.create(user=user,
-                                            matricula= request.data["matricula"],
+                                            id_alumno= request.data["id_alumno"],
                                             curp= request.data["curp"].upper(),
                                             rfc= request.data["rfc"].upper(),
                                             fecha_nacimiento= request.data["fecha_nacimiento"],
@@ -103,7 +103,7 @@ class AlumnosView(generics.CreateAPIView):
         alumno = get_object_or_404(Alumnos, id=request.data["id"])
         
         # Actualizar campos del alumno
-        alumno.matricula = request.data["matricula"]
+        alumno.id_alumno = request.data["id_alumno"]
         alumno.curp = request.data["curp"].upper()
         alumno.rfc = request.data["rfc"].upper()
         alumno.fecha_nacimiento = request.data["fecha_nacimiento"]
