@@ -11,7 +11,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '-_&+lsebec(whhw!%n@ww&1j=4-^j_if9x8$q
 
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 # Agregar el host de Render en producción
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
@@ -45,11 +45,14 @@ MIDDLEWARE = [
 ]
 
 # Configuración de CORS: define orígenes permitidos
-CORS_ALLOWED_ORIGINS = [
-    '*',
-]
+
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_HEADERS = ['*']
+CORS_ALLOW_METHODS = ['*']
 
 ROOT_URLCONF = 'app_movil_escolar_api.urls'
 
