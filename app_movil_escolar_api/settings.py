@@ -56,7 +56,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:4200',
     'https://app-movil-escolar-webapp.onrender.com',
-    "https://app-movil-escolar-webapp-dbn4rgxdr-aldairs-projects-fa2dc093.vercel.app",
+    "https://app-movil-escolar-webapp-wheat.vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
