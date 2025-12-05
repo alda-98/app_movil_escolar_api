@@ -15,6 +15,8 @@ ALLOWED_HOSTS = [
     ".onrender.com",
     "localhost",
     "127.0.0.1",
+    "app-movil-escolar-api-w30o.onrender.com",
+    "app-movil-escolar-api-xxqf.onrender.com"
 ]
 
 # Agregar el host de Render en producción
@@ -38,9 +40,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',     # CORS debe ir antes de CommonMiddleware
     'whitenoise.middleware.WhiteNoiseMiddleware',  # Para servir archivos estáticos
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',     # CORS debe ir antes de CommonMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -58,15 +60,11 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
-
 CORS_ALLOW_HEADERS = ['*']
 CORS_ALLOW_METHODS = ['*']
-
 CORS_ALLOW_PRIVATE_NETWORK = True
-
+SECURE_SSL_REDIRECT = False
 ROOT_URLCONF = 'app_movil_escolar_api.urls'
-
-
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
